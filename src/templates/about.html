@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+<title>About Page</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div>
+    <h1>About</h1>
+    <p>
+        Name: {{ name|upper }}
+        <br/>
+        <br/>
+        Number: {{ number }}
+        <br/>
+        <br/>
+        Text: {{ text }}
+    </p>
+    <br/>
+    <ul>
+        {% for l in list %}
+
+            {% if l == 1234 %}
+                <li>{{forloop.counter}} - {{ l|add:10 }}</li>
+
+            {% elif l == 8302 %}
+                <li>{{forloop.counter}} - {{ l }} Hello!</li>
+
+            {% else %}
+                <li>{{forloop.counter}} - {{ l }}</li>
+            {% endif %}
+
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

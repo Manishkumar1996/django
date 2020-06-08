@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>Django Project</title>
+    {% endblock %}
+</head>
+<body>
+{% include 'navbar.html' %}
+
+<div style="text-align: center; padding: 50px 0">
+
+    {% block content %}
+
+    {% endblock %}
+</div>
+</body>
+</html>

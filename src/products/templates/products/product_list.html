@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>List of Product</title>
+{% endblock %}
+
+{% block content %}
+<h1>List of Product</h1>
+<table style="width: 80%; text-align: left; margin: 0 auto">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Summary</th>
+        <th>Price</th>
+        <th>Featured</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for product in products %}
+    <tr>
+        <td>{{ product.title }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.summary }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.featured }}</td>
+        <td>
+            <a href="{{ product.get_product_update_url }}">Edit</a>
+            &nbsp;&nbsp;
+            <a href="{{ product.get_product_delete_url }}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

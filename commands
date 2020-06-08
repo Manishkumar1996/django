@@ -1,0 +1,45 @@
+install python
+install virtualenv
+
+commands
+
+in directory
+$ python3 -m venv env_name => make another dir with env_name
+or
+$ python3 -m venv .  => in same dir
+
+active before start server
+$ source bin/activate
+
+make dir as a "src"
+$ cd src/
+
+create new project
+$ django-admin startproject project_name .
+
+start server
+$ python manage.py runserver
+
+to create super user
+$ python manage.py createsuperuser
+
+to create or start new app
+$ python manage.py startapp app_name => like:  python manage.py startapp products
+
+run makemigrations always after edit models
+$ python manage.py makemigrations
+
+after makemigrations run migrate
+$ python manage.py migrate
+
+for open shell
+$ python manage.py shell
+
+in shell for import
+>>> from products.models import Product
+for access objects list, get, create
+>>> Product.objects.all(), Product.objects.get(id=1), Product.objects.create(title: '', description: '')
+
+to see data inside object
+>>> obj = Product.objects.get(id=1)
+>>> dir(obj)

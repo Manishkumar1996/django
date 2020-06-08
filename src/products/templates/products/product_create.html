@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>Product Create</title>
+{% endblock %}
+
+{% block content %}
+<h1>Product Create Form</h1>
+
+<!-- Form Using Django -->
+<!--<form method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <input type="submit" value="save"/>
+</form>-->
+
+<!-- OR -->
+
+<!-- From Using Raw HTML -->
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="save"/>
+</form>
+
+{% endblock %}
